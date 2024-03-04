@@ -1,0 +1,8 @@
+Flask
+flask_sqlalchemy
+joblib
+numpy
+pandas
+scikit-learn
+secrets
+duckduckgo_search
