@@ -1,4 +1,5 @@
 import random
+from duckduckgo_search import DDGS
 from flask import jsonify
 import secrets
 from flask import Flask, render_template, flash, redirect, url_for, session, logging, request, session
@@ -268,10 +269,11 @@ def get_symtoms(user_disease):
         return True,symptoms
 
 
-from duckduckgo_search import ddg
+from googlesearch import search as google_search
+
 
 def getDiseaseInfo(keywords):
-    results = ddg(keywords, region='wt-wt', safesearch='Off', time='y')
+    results = DDGS(keywords, region='wt-wt', safesearch='Off', time='y')
     return results[0]['body']
 
 
@@ -457,8 +459,7 @@ def chat_msg():
 
 
 
-
 if __name__ == "__main__":
-
-    db.create_all()
+    with app.app_context():
+        db.create_all()
     app.run(debug=False, port=3000)
