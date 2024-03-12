@@ -1,7 +1,7 @@
-              pip install --user flask_sqlalchemy==2.5.1
-              pip install --user flask==1.1.4
-              pip install --user jinja2==3.0.1
-              pip install --user numpy
-              pip install --user pillow==8.2.0
-            pip install --user requests==2.25.1
-            pip install --user werkzeug==1.0.1
+              pip install  flask_sqlalchemy==2.5.1
+              pip install  flask==1.1.4
+              pip install  jinja2==3.0.1
+              pip install  numpy
+              pip install  pillow==8.2.0
+            pip install  requests==2.25.1
+            pip install  werkzeug==1.0.1
