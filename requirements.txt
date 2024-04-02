@@ -5,3 +5,5 @@
               pip install  pillow==8.2.0
             pip install  requests==2.25.1
             pip install  werkzeug==1.0.1
+   pip3 install joblib
+pip3 install scikit-learn
