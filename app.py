@@ -26,6 +26,13 @@ class user(db.Model):
     password = db.Column(db.String(80))
 
 
+# Create tables at import time, not only under __main__, so the app also works
+# under a WSGI server such as gunicorn (where __main__ never runs). The
+# SQLite file is created under instance/ on first start.
+with app.app_context():
+    db.create_all()
+
+
 @app.route("/")
 def index():
     return render_template("index.html")
@@ -426,6 +433,6 @@ def chat_msg():
 
 
 if __name__ == "__main__":
-    with app.app_context():
-        db.create_all()
-    app.run(debug=False, port=3000)
+    # Render injects $PORT (default 10000) and health-checks it: bind all
+    # interfaces on $PORT instead of the hardcoded localhost:3000.
+    app.run(host="0.0.0.0", port=int(os.environ.get("PORT", 3000)), debug=False)

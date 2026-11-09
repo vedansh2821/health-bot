@@ -6,8 +6,8 @@ nearby hospitals. It also has user registration/login (SQLite), a symptoms
 browser, and a BMI calculator page.
 
 > ⚠️ **Demo project, not a medical device.** Predictions come from a small
-> dataset and cosine-similarity matching — they are rough guesses, not a
-> diagnosis. Always consult a qualified doctor.
+dataset and cosine-similarity matching — they are rough guesses, not a
+diagnosis. Always consult a qualified doctor.
 
 ## Screenshots
 
@@ -51,7 +51,7 @@ Screenshots captured from the app running locally (`python app.py`):
 app.py                  # Flask app: routes, chat state machine, prediction logic
 msgConstant.py          # Chatbot greeting messages
 requirements.txt        # Pinned dependencies
-Dockerfile              # Container image (python:3.12-slim, port 3000)
+Dockerfile              # Container image (python:3.12-slim, binds $PORT)
 classes/
   User.py               # BMI / BMR / calorie helpers (currently unused by app.py)
   Food.py               # Food item model (currently unused by app.py)
@@ -83,13 +83,13 @@ export SECRET_KEY="a-long-random-string"   # Windows: set SECRET_KEY=...
 python app.py
 ```
 
-Open <http://127.0.0.1:3000> — the app listens on port **3000**.
+Open <http://127.0.0.1:10000> — the app listens on `$PORT` (default **10000** on Render, **3000** locally).
 
 ## Run with Docker
 
 ```bash
 docker build -t medi-bot .
-docker run -p 3000:3000 -e SECRET_KEY="a-long-random-string" medi-bot
+docker run -p 10000:10000 -e PORT=10000 -e SECRET_KEY="a-long-random-string" medi-bot
 ```
 
 ## Known limitations
