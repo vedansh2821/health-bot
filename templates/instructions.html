@@ -1,0 +1,21 @@
+{% extends "base.html" %} {% block head %}
+<title>How to Use | Medi-Bot</title>
+{% endblock head %} {% block main %}
+
+<section class="container" style="padding-top: 120px;">
+    <h1>How to use Medi-Bot</h1>
+    <ol>
+        <li><a href="/register">Register</a> an account, then <a href="/login">log in</a>.</li>
+        <li>Open the chatbot from the home page and tell it your name and age.</li>
+        <li>Choose <strong>1. Predict Disease</strong> and list the symptoms you are experiencing
+            (see the <a href="/diseases">symptoms list</a>), or choose
+            <strong>2. Check Disease Symptoms</strong> and enter a disease name.</li>
+        <li>The bot suggests a possible condition and links to nearby hospitals.</li>
+    </ol>
+    <p><strong>Important:</strong> Medi-Bot is a student demo project, not a medical
+        device. Its predictions are rough guesses from a small dataset — always
+        consult a qualified doctor for diagnosis or treatment.</p>
+    <p><a href="/">Back to home</a></p>
+</section>
+
+{% endblock main %}
