@@ -6,8 +6,8 @@ nearby hospitals. It also has user registration/login (SQLite), a symptoms
 browser, and a BMI calculator page.
 
 > ⚠️ **Demo project, not a medical device.** Predictions come from a small
-dataset and cosine-similarity matching — they are rough guesses, not a
-diagnosis. Always consult a qualified doctor.
+> dataset and cosine-similarity matching — they are rough guesses, not a
+> diagnosis. Always consult a qualified doctor.
 
 ## Screenshots
 
