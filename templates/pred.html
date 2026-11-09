@@ -1,0 +1,21 @@
+{% extends "base.html" %} {% block head %}
+<title>Prediction | Medi-Bot</title>
+{% endblock head %} {% block main %}
+
+<section class="container" style="padding-top: 120px;">
+    <h1>Prediction result</h1>
+    {% if pred %}
+    <p>{{ pred|safe }}</p>
+    {% else %}
+    <p>No prediction yet. Start a chat from the <a href="/user">chatbot</a>
+        and answer its questions first.</p>
+    {% endif %}
+    {% if f_name %}
+    <p>Uploaded file: {{ f_name }}</p>
+    {% endif %}
+    <p><a href="/user">Predict again</a> &middot; <a href="/">Back to home</a></p>
+    <p><strong>Important:</strong> Medi-Bot is a student demo project, not a medical
+        device. Always consult a qualified doctor for diagnosis or treatment.</p>
+</section>
+
+{% endblock main %}
